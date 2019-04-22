@@ -3,6 +3,7 @@ package cn.com.taiji.redis.test.controller;
 
 import cn.com.taiji.redis.test.model.User;
 import cn.com.taiji.redis.test.service.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,12 +31,17 @@ public class UserController {
 		User user = userService.putUser(id);
 		return user;
 	}
+	
+	@RequestMapping("/updateUser")
+	public User updateUser(String id,Integer age){
+		User user = userService.updateUser(id,age);
+		return user;
+	}
 
 	@RequestMapping("/getUserNokey")
 	public User getUserNokey(String id){
 		User user = userService.getUserNokey(id);
 		return user;
 	}
-	
 
 }

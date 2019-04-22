@@ -19,5 +19,8 @@ public interface UserService {
 
 	@Cacheable(value="users")
 	User getUserNokey(String id);
+	
+	@CachePut(value="users", key="'user_'+#id")
+	User updateUser(String id,Integer age);
 
 }

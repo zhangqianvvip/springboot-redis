@@ -34,6 +34,16 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	public User updateUser(String id,Integer age) {//每次都会执行
+		System.out.println(id+"进入实现类获取数据！");
+		User user = new User();
+		user.setId(id);
+		user.setName("90909");
+		user.setAge(Integer.valueOf(age));
+		return user;
+	}
+
+	@Override
 	public User getUserNokey(String id) {
 		System.out.println(id+"进入实现类获取数据！");
 		User user = new User();
